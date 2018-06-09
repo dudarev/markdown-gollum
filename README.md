@@ -1,4 +1,4 @@
-[Python-Markdown] plugin adds handling of [Gollum style links]. Gollum is wiki used in Github projects.
+[Python-Markdown] plugin that adds handling of [Gollum style links]. Gollum is wiki used in Github projects.
 
 Usage is similar to standard `markdown.extensions.wikilinks` extendsion:
 

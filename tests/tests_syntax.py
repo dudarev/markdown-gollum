@@ -1,3 +1,11 @@
+"""
+This is a single test similar to syntax tests in Python-Markdown that are described at
+
+https://python-markdown.github.io/test_suite/#markdown-syntax-tests
+
+It compares conversions of `./wikilinks.md` with `./wikilinks.html`.
+"""
+
 import os
 import unittest
 
@@ -23,7 +31,6 @@ class TestWikiLinks(unittest.TestCase):
         with open(os.path.join(FILE_DIR, TEST_OUT)) as f_out:
             text_out_expected = f_out.read().strip()
         text_out = self.md.convert(text_in)
-        print(text_out)
         self.assertEqual(
             text_out,
             text_out_expected

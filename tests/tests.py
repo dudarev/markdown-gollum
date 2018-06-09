@@ -1,3 +1,14 @@
+"""
+Regressions tests.
+
+Copied from wikilinks Python-Markdown tests to make sure that they still pass.
+They may be found in Python-Markdown repo at:
+
+markdown/tests/test_extensions.py
+
+`testLinkText` test is added.
+"""
+
 import unittest
 
 import markdown
@@ -101,7 +112,7 @@ Some text with a [[WikiLink]]."""
         )
 
     def testLinkText(self):
-        """[[link-text|linked-resource]]"""
+        """Test [[link-text|linked-resource]]"""
         from markdown_gollum.wikilinks import WikiLinkExtension
         md = markdown.Markdown(extensions=[WikiLinkExtension(
             base_url='',
