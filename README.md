@@ -1,5 +1,8 @@
 [Python-Markdown] plugin that adds handling of [Gollum style links]. Gollum is wiki used in Github projects.
 
+Note that at the moment it just adds parsing of link tags in a form `[[link-text|linked-resource]]`.
+You would need to add other Gollum syntax as needed.
+
 Usage is similar to standard `markdown.extensions.wikilinks` extendsion:
 
 ```python
