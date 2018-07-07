@@ -53,6 +53,16 @@ class TestWikiLinks(unittest.TestCase):
             '<p>foo  bar</p>'
         )
 
+    def testPunctuation(self):
+        self.assertEqual(
+            self.md.convert('[[?!|facebook-2001100099931047]]'),
+            '<p><a class="wikilink" href="/facebook-2001100099931047/">?!</a></p>'
+        )
+        self.assertEqual(
+            self.md.convert('foo [[ ]] bar'),
+            '<p>foo  bar</p>'
+        )
+
     def testSimpleSettings(self):
         """ Test Simple Settings. """
 
