@@ -43,6 +43,16 @@ class TestWikiLinks(unittest.TestCase):
             '<p>foo  bar</p>'
         )
 
+    def testWikilinkWithCommas(self):
+        self.assertEqual(
+            self.md.convert('[[Подскажите, пожалуйста, кто в городе плетёт косы с канеколоном, кроме Серафимы.|facebook-2001100099931047]]'),  # noqa
+            '<p><a class="wikilink" href="/facebook-2001100099931047/">Подскажите, пожалуйста, кто в городе плетёт косы с канеколоном, кроме Серафимы.</a></p>'  # noqa
+        )
+        self.assertEqual(
+            self.md.convert('foo [[ ]] bar'),
+            '<p>foo  bar</p>'
+        )
+
     def testSimpleSettings(self):
         """ Test Simple Settings. """
 
