@@ -143,6 +143,20 @@ Some text with a [[WikiLink]]."""
         html = '<p><a href="linked-resource">link-text</a></p>'
         self.assertEqual(md.convert(text), html)
 
+    def testMoreUnicode(self):
+        from markdown_gollum.wikilinks import WikiLinkExtension
+        md = markdown.Markdown(extensions=[WikiLinkExtension(
+            base_url='',
+            end_url='',
+            html_class=''
+        )])
+        text = "[[Вопрос к жителям города или отдыхающим «в теме». Ребенку скоро 14 лет." + \
+            "|facebook-1945869095704578]]"
+        html = '<p><a href="facebook-1945869095704578">' + \
+            'Вопрос к жителям города или отдыхающим «в теме». Ребенку скоро 14 лет.' + \
+            '</a></p>'
+        self.assertEqual(md.convert(text), html)
+
 
 if __name__ == '__main__':
     unittest.main()
